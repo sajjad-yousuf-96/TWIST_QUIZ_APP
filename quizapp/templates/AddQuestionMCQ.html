@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" style="width: 1366px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>QUIZAPPADDQUESTION</title>
+    <link rel="stylesheet" href="{% static 'AddQuestionMCQ/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700">
+    <link rel="stylesheet" href="{% static 'AddQuestionMCQ/css/Button-Change-Text-on-Hover.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="{% static 'AddQuestionMCQ/css/Navigation-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'AddQuestionMCQ/css/Neon-Button.css' %}">
+    <link rel="stylesheet" href="{% static 'AddQuestionMCQ/css/styles.css' %}">
+</head>
+
+<style>
+    .btn-outline-success{
+        color: #fffefe;
+        background-color: transparent !important;
+        border-color: #fffefe;
+    }
+    .btn-outline-success:hover{
+        color: #fffefe;
+        background-color: #00589E !important;
+        border-color: #fffefe;
+    }
+</style>
+
+<body style="border-color: rgb(21,35,45);height: 550px;margin-right: 0px;width: 1366px;margin-bottom: 0;">
+    <div class="mynav" style="display: flex;align-items: center;width: 1366px;height: 63px;background: #005ad5;">
+        <div></div>
+        <div style="margin: 0px;padding: 0px;padding-left: 0px;width: 500.3px;height: 58px;border-style: none;"><img style="width: 160px;height: 57px;" src="{% static '/images/twistquiz-01.png' %}"></div>
+        <div style="width: 300px;height: 58px;margin-left: 540px;border-style: none;border-color: rgb(202,221,241);"><a class="btn btn-primary" href="{% url 'teacherlogout' %}" type="button" style="background: #005ad5;font-size: 20px;margin-left: 185px;border-style: solid;border-color: rgb(255,252,252);border-radius: 17px;margin-top: 7px;">LOGOUT</a></div>
+    </div>
+    <div style="height: 555px;width: 1366px;background: #e0e0ed;padding-top: 2px;border-style: none;border-color: var(--bs-indigo);">
+        <form method="POST">
+            {% csrf_token %}
+            <div style="color: var(--bs-indigo);height: 482px;width: 1001px;border-radius: 33px;padding-bottom: 0px;padding-left: 0px;margin-left: 185px;margin-top: 39px;background: transparent;opacity: 0.78;border-style: none;border-color: var(--bs-indigo);">
+                <div style="width: 995px;height: 60px;border-style: none;"><label class="form-label" style="height: 50px;width: 500px;margin-left: 280px;color: rgb(0,0,0);font-size: 36px;font-weight: bold;margin-top: 0px;">ADD YOUR QUESTIONS</label></div>
+                <div style="height: 138px;border-style: none;"><input name="QUES" type="text" style="margin-left: 90px;height: 105px;width: 800px;background: transparent;border-radius: 25px;margin-top: 12px;border-style: solid;border-color: rgb(160,150,150);" placeholder="Write Your Question Here"></div>
+                <div style="height: 180px;border-style: none;"><input name="option1" type="text" style="margin-left: 125px;background: transparent;border-radius: 10px;height: 50px;width: 280px;border-style: solid;border-color: rgb(160,150,150);" placeholder="Option-1"><input name="option2" type="text" style="margin-left: 162px;background: transparent;border-radius: 10px;height: 50px;width: 280px;border-style: solid;border-color: rgb(160,150,150);"  placeholder="Option-2"><input name="option3" type="text" style="margin-left: 125px;background: transparent;border-radius: 10px;height: 50px;width: 280px;border-style: solid;border-color: rgb(160,150,150);margin-top: 8px;" placeholder="Option-3"><input name="option4" type="text" style="margin-left: 163px;background: transparent;border-radius: 10px;height: 50px;width: 280px;border-style: solid;border-color: rgb(160,150,150);margin-top: 8px;" placeholder="Option-4"><input name="C1" type="text" style="margin-left: 347px;background: transparent;border-radius: 10px;height: 50px;width: 280px;border-style: solid;border-color: rgb(160,150,150);margin-top: 8px;" placeholder="Correct Option"></div>
+                <div style="height: 105px;border-style: none;"><input name="addmore" class="btn btn-primary" type="submit" style="background: #005ad5;font-size: 20px;margin-left: 425px;border-radius: 12px;margin-top: 7px;color: rgb(252,252,252);border-style: solid;border-color: rgb(170,158,158);" value="ADD MORE"><input class="btn btn-primary pulse animated infinite" name="Finish" type="submit" style="background: rgb(36,169,49);font-size: 20px;margin: -123px;margin-left: -99px;border-style: solid;border-color: rgb(255,252,252);border-radius: 12px;margin-top: -10px;color: rgb(255,255,255);" value="Finish"></div>
+            </div>
+        </form>
+    </div>
+    <script src="{% static 'AddQuestionMCQ/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'AddQuestionMCQ/bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

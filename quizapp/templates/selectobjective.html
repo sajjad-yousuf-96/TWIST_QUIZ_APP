@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" style="width: 1366px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>QUIZAPPSelectobjective</title>
+    <link rel="stylesheet" href="{% static 'selectobjective/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700">
+    <link rel="stylesheet" href="{% static 'selectobjective/css/Button-Change-Text-on-Hover.css' %}">
+    <link rel="stylesheet" href="{% static 'selectobjective/css/Navigation-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'selectobjective/css/Neon-Button.css' %}">
+    <link rel="stylesheet" href="{% static 'selectobjective/css/styles.css' %}">
+</head>
+<style>
+    .mcqs{
+        background-image: url("../static/images/mcqs.jpg");
+	    background-size: cover;
+
+    }
+    .tf{
+        background-image: url("../static/images/tf.jpg");
+	    background-size: cover;
+
+    }
+    .blanks{
+        background-image: url("../static/images/blanks.jpg");
+	    background-size: cover;
+
+    } 
+    .btn-outline-success{
+        color: #fffefe;
+        background-color: transparent !important;
+        border-color: #fffefe;
+    }
+    .btn-outline-success:hover{
+        color: #fffefe;
+        background-color: #00589E !important;
+        border-color: #fffefe;
+    }
+
+</style>
+<body style="border-color: rgb(21,35,45);height: 550px;margin-right: 0px;width: 1366px;margin-bottom: 0;">
+    <div class="mynav" style="display: flex;align-items: center;width: 1366px;height: 63px;background: #005ad5;">
+        <div></div>
+        <div style="margin: 0px;padding: 0px;padding-left: 0px;border-style: none;width: 487.3px;height: 58px;"><img style="width: 160px;height: 57px;" src="{% static '/images/twistquiz-01.png' %}"></div>
+        <div style="width: 300px;height: 58px;margin-left: 581px;border-style: none;border-color: rgb(202,221,241);"><a class="btn btn-outline-success" href="{% url 'teacherlogout' %}" type="button" style="background: transparent;font-size: 20px;margin-left: 196px;border-style: solid;border-color: rgb(255,252,252);border-radius: 17px;margin-top: 7px;">Logout</a></div>
+    </div>
+    <div style="height: 562px;width: 1366px;background: #e0e0ed;padding-top: 2px;border-style: none;border-color: var(--bs-indigo);">
+        <div class="d-flex" style="color: var(--bs-indigo);height: 482px;width: 1001px;border-radius: 0px;padding-bottom: 0px;padding-left: 0px;margin-left: 185px;margin-top: 39px;border-style: none;border-color: var(--bs-indigo);background: #005ad5;opacity: 0.78;">
+            <div style="height: 200px;border-radius: 26px;width: 200px;margin-right: 0px;margin-left: 140px;margin-top: 150px;background: #e0e0ed;border-style: none;border-color: rgb(92,205,206);">
+                <div style="height: 107px;width: 144px;border-radius: 2000px;margin-left: 29px;margin-top: 23px;background: #ffffff;border: 1px solid rgb(30,29,31);">
+                    <div class="mcqs" style="width: 90px;height: 80px;margin-left: 24px;margin-top: 11px; border-style: none;"></div>
+                </div><a class="btn btn-primary"  href="{% url 'QuizConstraints' %}"  type="button" style="margin-left: 40px;background: #e0e0ed;border-radius: 12px;border-style: none;border-color: var(--bs-gray-900);font-size: 29px;padding-top: 15px;color: rgb(16,15,15);">MCQ's</a>
+            </div>
+            <div style="color: var(--bs-indigo);width: 200px;height: 200px;border-radius: 26px;margin-top: 150px;margin-left: 65px;margin-bottom: 43px;margin-right: 0px;background: #e0e0ed;border: 3px none rgb(25,53,73);">
+                <div style="height: 107px;width: 144px;border-radius: 2000px;margin-left: 29px;margin-top: 23px;background: #ffffff;border: 1px solid rgb(30,29,31);">
+                    <div class="tf" style="width: 90px;height: 80px;margin-left: 24px;margin-top: 5px;border-style: none;"></div>
+                </div><a class="btn btn-primary" type="button" style="margin-left: 25px;background: #e0e0ed;border-radius: 12px;border-style: none;border-color: var(--bs-gray-900);font-size: 29px;padding-top: 15px;padding-left: 4px;color: rgb(8,8,8);">TRUE/FLASE</a>
+            </div>
+            <div style="width: 200px;margin-left: 65px;border-radius: 26px;margin-top: 150px;margin-bottom: 44px;height: 200px;background: #e0e0ed;border: 3px none rgb(25,53,73);">
+                <div style="height: 107px;width: 144px;border-radius: 2000px;margin-left: 29px;margin-top: 23px;background: #ffffff;border: 1px solid rgb(30,29,31);">
+                    <div class="blanks" style="width: 90px;height: 80px;margin-left: 24px;margin-top: 11px;border-style: none;"></div>
+                </div><a class="btn btn-primary" type="button" style="margin-left: 49px;background: #e0e0ed;border-radius: 12px;border-style: none;border-color: var(--bs-gray-900);font-size: 29px;padding-top: 15px;padding-left: 4px;color: rgb(21,20,20);">BLANKS</a>
+            </div><label class="form-label" style="height: 50px;width: 623.3px;margin-left: -527px;margin-top: 44px;color: rgb(255,255,255);font-size: 40px;font-family: Century Gothic;font-weight: bold;">SELECT OBJECTIVE</label>
+        </div>
+    </div>
+    <script src="{% static 'selectobjective/bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" style="width: 1366px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>QUIZAPPADDQUESTION</title>
+    <link rel="stylesheet" href="{% static 'AddQuestion/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700">
+    <link rel="stylesheet" href="{% static 'AddQuestion/css/Button-Change-Text-on-Hover.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="{% static 'AddQuestion/css/Navigation-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'AddQuestion/css/Neon-Button.css' %}">
+    <link rel="stylesheet" href="{% static 'AddQuestion/css/styles.css' %}">
+</head>
+<style>
+    .btn-outline-success{
+        color: #fffefe;
+        background-color: transparent !important;
+        border-color: #fffefe;
+    }
+    .btn-outline-success:hover{
+        color: #fffefe;
+        background-color: #00589E !important;
+        border-color: #fffefe;
+    }
+</style>
+<body style="border-color: rgb(21,35,45);height: 550px;margin-right: 0px;width: 1366px;margin-bottom: 0;">
+    <div class="mynav" style="display: flex;align-items: center;width: 1366px;height: 63px;background: #005ad5;">
+        <div></div>
+        <div style="margin: 0px;padding: 0px;padding-left: 0px;width: 500.3px;height: 58px;border-style: none;"><img style="width: 160px;height: 57px;" src="{% static '/images/twistquiz-01.png' %}"></div>
+        <div style="width: 300px;height: 58px;margin-left: 540px;border-style: none;border-color: rgb(202,221,241);"><a class="btn btn-outline-success" href="{% url 'teacherlogout' %}" type="button" style="background: #005ad5;font-size: 20px;margin-left: 185px;border-style: solid;border-color: rgb(255,252,252);border-radius: 17px;margin-top: 7px;">LOGOUT</a></div>
+    </div>
+    <div style="height: 555px;width: 1366px;background: #e0e0ed;padding-top: 2px;border-style: none;border-color: var(--bs-indigo);">
+        <div style="color: var(--bs-indigo);height: 482px;width: 1001px;border-radius: 33px;padding-bottom: 0px;padding-left: 0px;margin-left: 185px;margin-top: 39px;background: transparent;opacity: 0.78;border-style: none;border-color: var(--bs-indigo);">
+            <form method="POST">
+                {% csrf_token %}
+                <div style="width: 995px;height: 84px;border-style: none;"><label class="form-label" style="height: 50px;width: 500px;margin-left: 280px;color: rgb(0,0,0);font-size: 36px;font-weight: bold;margin-top: 20px;">ADD YOUR QUESTIONS</label></div>
+                <div style="height: 182px;border-style: none;"><input name="QUES"  type="text" style="margin-left: 90px;height: 135px;width: 800px;background: transparent;border-radius: 25px;margin-top: 12px;border-style: solid;border-color: #a09696;" placeholder="Write Your Question Here"></div>
+                <div style="height: 70px;border-style: none;"><input name="O1" type="text" style="margin-left: 127px;background: transparent;border-radius: 10px;height: 50px;width: 280px;border-style: solid;border-color: rgb(160,150,150);" placeholder="Option-1"><input name="O2" type="text" style="margin-left: 152px;background: transparent;border-radius: 10px;height: 50px;width: 280px;border-style: solid;border-color: rgb(160,150,150);" placeholder="Option-2"></div>
+                <div style="height: 65px;border-style: none;"><input name="O3" type="text" style="margin-left: 127px;background: transparent;border-radius: 10px;height: 50px;width: 280px;border-style: solid;border-color: rgb(160,150,150);" placeholder="Option-3"><input name="O4" type="text" style="margin-left: 152px;background: transparent;border-radius: 10px;height: 50px;width: 280px;border-style: solid;border-color: rgb(160,150,150);" placeholder="Option-4"><input name="C1" type="text" style="margin-left: 177px;background: transparent;border-radius: 10px;height: 50px;width: 280px;border-style: solid;border-color: rgb(160,150,150);" placeholder="Correct Answer"></div>
+                <div style="height: 105px;border-style: none;"><input class="btn btn-primary" name="ADDMore" type="submit" style="background: #005ad5;font-size: 20px;margin-left: 425px;border-radius: 12px;margin-top: 7px;color: rgb(252,252,252);border-style: solid;border-color: rgb(170,158,158);" value = "ADD More" > <input class="btn btn-primary pulse animated infinite" href="{% url 'MCQsForm' %}" name="Finish"  type="submit" style="background: rgb(36,169,49);font-size: 20px;margin: -123px;margin-left: -99px;border-style: solid;border-color: rgb(255,252,252);border-radius: 12px;margin-top: -10px;color: rgb(255,255,255);" value="Finish"></div>
+            </form>                                                                     
+            <!-- submit ke button ki type change krni hoti pehly form banaty aur button ko input krdety a tag ke badly aur value mai nam dai dety button ka -->
+        </div>
+    </div>
+    <script src="{% static 'AddQuestion/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'AddQuestion/bootstrap/js/bs-init.js' %}"></script>
+</body>
+
+</html>

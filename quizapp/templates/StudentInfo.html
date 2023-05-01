@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" style="width: 1366px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>QUIZAPPstudentInfo</title>
+    <link rel="stylesheet" href="{% static 'QuizConstraints/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700">
+    <link rel="stylesheet" href="{% static 'QuizConstraints/css/Button-Change-Text-on-Hover.css' %}">
+    <link rel="stylesheet" href="{% static 'QuizConstraints/css/Navigation-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'QuizConstraints/css/Neon-Button.css' %}">
+    <link rel="stylesheet" href="{% static 'QuizConstraints/css/styles.css' %}">
+</head>
+
+<style>
+    .btn-outline-success{
+        color: #fffefe;
+        background-color: transparent !important;
+        border-color: #fffefe;
+    }
+    .btn-outline-success:hover{
+        color: #fffefe;
+        background-color: #00589E !important;
+        border-color: #fffefe;
+    }
+</style>
+
+<body style="border-color: rgb(21,35,45);height: 550px;margin-right: 0px;width: 1366px;margin-bottom: 0;">
+    <div class="mynav" style="display: flex;align-items: center;width: 1366px;height: 63px;background: #005ad5;">
+        <div></div>
+        <div style="margin: 0px;padding: 0px;padding-left: 0px;border-style: none;width: 487.3px;height: 58px;"><img style="width: 160px;height: 57px;" src="{% static '/images/twistquiz-01.png' %}"></div>
+        <div style="width: 300px;height: 58px;margin-left: 581px;border-style: none;border-color: rgb(202,221,241);"><a class="btn btn-outline-success" href="{% url 'teacherlogout' %}" type="button" style="background: transparent;font-size: 20px;margin-left: 196px;border-style: solid;border-color: rgb(255,252,252);border-radius: 17px;margin-top: 7px;">Logout</a></div>
+    </div>
+    <div style="height: 562px;width: 1366px;padding-top: 2px;border-style: none;border-color: var(--bs-indigo);background: #e0e0ed;">
+        <div style="color: var(--bs-indigo);width: 1001px;border-radius: 0px;padding-bottom: 0px;padding-left: 0px;margin-left: 185px;margin-top: 39px;border-style: none;border-color: var(--bs-indigo);opacity: 0.90;height: 482px;background: #005ad5;">
+            <form  action="{% url 'StudentInfo' %}" method="POST">
+                {% csrf_token %}
+                <div style="border-style: none;height: 116px;"><label class="form-label" style="height: 50px;width: 600px;margin-left: 330px;color: rgb(254,253,255);font-size: 36px;font-weight: bold;margin-top: 20px;">ATTEMPT YOUR QUIZ</label></div>
+                <div style="height: 80px;width: 1000px;margin-left: 0px;border-radius: 19px;border-style: none;"><label class="form-label" style="font-size: 30px;margin-top: 14px;margin-left: 250px;color: rgb(254,253,255);font-family: Overpass;">Enter your Name</label><input name="name" type="text" style="margin-left: 80px;height: 28px;width: 200px;" value="{{su}}"></div>
+                <div style="height: 80px;border-style: none;"><label class="form-label" style="font-size: 30px;margin-top: 14px;margin-left: 250px;font-family: Overpass;color: rgb(249,249,249);">Enter your Roll No</label><input name= 'rollno' type="text" style="margin-left: 57px;height: 28px;width: 200px;" value="{{rollno}}" ></div>
+                <div class="d-flex" style="height: 80px;border-style: none;"><label class="form-label" style="font-size: 30px;margin-top: 14px;font-family: Overpass;color: rgb(252,252,252);margin-left: 250px;">Enter Quiz Code</label><input name='quizcode' type="text" style="margin-left: 87px;height: 28px;width: 200px;margin-top: 27px;" required></div>
+                <div style="height: 80px;border-style: none;"><input class="btn btn-primary" type="submit" style="background: #005ad5;font-size: 26px;margin-left: 484px;border-style: solid;border-color: rgb(255,252,252);border-radius: 17px;margin-top: 20px;" value="Start"></div>
+            </form>
+        </div>
+    </div>
+    <script src="{% static 'QuizConstraints/bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

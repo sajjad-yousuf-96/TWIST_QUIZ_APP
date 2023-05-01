@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" style="width: 1366px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>QUIZAPPmcqsform</title>
+    <link rel="stylesheet" href="{% static 'MCQsForm/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700">
+    <link rel="stylesheet" href="{% static 'MCQsForm/css/Button-Change-Text-on-Hover.css' %}">
+    <link rel="stylesheet" href="{% static 'MCQsForm/css/Navigation-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'MCQsForm/css/Neon-Button.css' %}">
+    <link rel="stylesheet" href="{% static 'MCQsForm/css/styles.css' %}">
+</head>
+
+<style>
+    a{
+        text-decoration: none !important;
+    }
+</style>
+
+
+<body style="border-color: rgb(21,35,45);height: 550px;margin-right: 0px;width: 1366px;margin-bottom: 0;">
+    <div class="mynav" style="display: flex;align-items: center;width: 1366px;height: 63px;background: #005ad5;">
+        <div></div>
+        <div style="margin: 0px;padding: 0px;padding-left: 0px;border-style: none;width: 487.3px;height: 58px;"><img style="width: 160px;height: 57px;" src="{% static '/images/twistquiz-01.png' %}"></div>
+    </div>
+    <div style="height: 562px;width: 1366px;background: #dfd4f1;padding-top: 2px;border-style: none;border-color: var(--bs-indigo);">
+        <div style="color: var(--bs-indigo);height: 560px;width: 850px;border-radius: 0px;padding-bottom: 0px;padding-left: 0px;margin-left: 277px;margin-top: -2px;border-style: none;border-color: var(--bs-indigo);background: #b1b1b5;opacity: 1;overflow-y: scroll;">
+            <form action="{% url 'newdata' %}" method="POST"> 
+                {% csrf_token %}
+                <!-- action se hum jis view kai function mai chaye us function mai bhej sakte hain wihout actionw wahi data post karefga jidhar se ayega -->
+            <div style="height: 64px;background: #37464f;border-style: none;margin-top: 0px;width: 833px;"> <label class="form-label" style="margin-top: 13px;font-size: 25px;color: rgb(247,247,248);margin-left: 8px;">HI <input type="text" name= "rollno"  value="{{rollno}}"></label>
+                
+                
+                <input class="btn btn-primary" type="submit" style="background: #37464f;font-size: 17px;margin-left: 19px;border-style: solid;border-color: rgb(255,252,252);border-radius: 18px;margin-top: -17px;height: 44px;"value="Finish"></div>
+           
+           
+            {% for data in alldatas %}
+
+                <div style="height: 250px;margin-top: 10px;width: 833px;background: #f4f4f7;border-style: none;">
+                    <div style="height: 50px;"><label class="form-label" style="margin-left: 35px;margin-top: 16px;font-size: 22px;color: rgb(0,0,0);">{{data.question}}</label></div>
+                    <div style="height: 175px;margin-top: 10px;border-style: none;border-color: rgb(3,3,3);">
+                        <div style="height: 35px;margin-top: 4px;border-style: none;">
+                            <div class="form-check" style="width: 200px;font-size: 18px;margin-left: 35px;color: rgb(1,1,1);"><input class="form-check-input" type="radio" name="{{data.id}}" value="{{data.wrongansw1}}"><label class="form-check-label" for="formCheck-1">{{data.wrongansw1}}</label></div>
+                        </div>
+                        <div style="height: 35px;margin-top: 7px;border-style: none;">
+                            <div class="form-check" style="width: 200px;font-size: 18px;margin-left: 35px;color: rgb(1,1,1);"><input class="form-check-input" type="radio" name="{{data.id}}" value="{{data.wrongansw2}}">  <label class="form-check-label" for="formCheck-2">{{data.wrongansw2}}</label></div>
+                        </div>
+                        <div style="height: 35px;margin-top: 7px;border-style: none;">
+                            <div class="form-check" style="width: 200px;font-size: 18px;margin-left: 35px;color: rgb(1,1,1);"><input class="form-check-input" type="radio" name="{{data.id}}" value="{{data.wrongansw3}}">  <label class="form-check-label" for="formCheck-3">{{data.wrongansw3}}</label></div>
+                        </div>
+                        <div style="height: 35px;margin-top: 7px;border-style: none;">
+                            <div class="form-check" style="width: 200px;font-size: 18px;margin-left: 35px;color: rgb(1,1,1);"><input class="form-check-input" type="radio" name="{{data.id}}" value="{{data.wrongansw4}}">  <label class="form-check-label" for="formCheck-4">{{data.wrongansw4}}</label></div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            <!-- <div style="height: 250px;margin-top: 10px;width: 833px;background: #f4f4f7;border-style: none;">
+                <div style="height: 50px;"><label class="form-label" style="margin-left: 35px;margin-top: 16px;font-size: 22px;color: rgb(0,0,0);">what is java?</label></div>
+                <div style="height: 175px;margin-top: 10px;border-style: none;">
+                    <div style="height: 35px;margin-top: 4px;border-style: none;">
+                        <div class="form-check" style="width: 200px;font-size: 18px;margin-left: 35px;color: rgb(1,1,1);"><input class="form-check-input" type="radio" id="formCheck-5"><label class="form-check-label" for="formCheck-5">option 1</label></div>
+                    </div>
+                    <div style="height: 35px;margin-top: 7px;border-style: none;">
+                        <div class="form-check" style="width: 200px;font-size: 18px;margin-left: 35px;color: rgb(1,1,1);"><input class="form-check-input" type="radio" id="formCheck-6"><label class="form-check-label" for="formCheck-6">option 2</label></div>
+                    </div>
+                    <div style="height: 35px;margin-top: 7px;border-style: none;">
+                        <div class="form-check" style="width: 200px;font-size: 18px;margin-left: 35px;color: rgb(1,1,1);"><input class="form-check-input" type="radio" id="formCheck-7"><label class="form-check-label" for="formCheck-7">option 3</label></div>
+                    </div>
+                    <div style="height: 35px;margin-top: 7px;border-style: none;">
+                        <div class="form-check" style="width: 200px;font-size: 18px;margin-left: 35px;color: rgb(1,1,1);"><input class="form-check-input" type="radio" id="formCheck-8"><label class="form-check-label" for="formCheck-8">option 4</label></div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div style="height: 250px;margin-top: 10px;width: 833px;background: #f4f4f7;border-style: none;">
+                <div style="height: 50px;"><label class="form-label" style="margin-left: 35px;margin-top: 16px;font-size: 22px;color: rgb(0,0,0);">what is C sharp?</label></div>
+                <div style="height: 175px;margin-top: 10px;border-style: none;border-color: rgb(3,3,3);">
+                    <div style="height: 35px;margin-top: 4px;border-style: none;">
+                        <div class="form-check" style="width: 200px;font-size: 18px;margin-left: 35px;color: rgb(1,1,1);"><input class="form-check-input" type="radio" id="formCheck-9"><label class="form-check-label" for="formCheck-9">option 1</label></div>
+                    </div>
+                    <div style="height: 35px;margin-top: 7px;border-style: none;">
+                        <div class="form-check" style="width: 200px;font-size: 18px;margin-left: 35px;color: rgb(1,1,1);"><input class="form-check-input" type="radio" id="formCheck-10"><label class="form-check-label" for="formCheck-10">option 2</label></div>
+                    </div>
+                    <div style="height: 35px;margin-top: 7px;border-style: none;">
+                        <div class="form-check" style="width: 200px;font-size: 18px;margin-left: 35px;color: rgb(1,1,1);"><input class="form-check-input" type="radio" id="formCheck-11"><label class="form-check-label" for="formCheck-11">option 3</label></div>
+                    </div>
+                    <div style="height: 35px;margin-top: 7px;border-style: none;">
+                        <div class="form-check" style="width: 200px;font-size: 18px;margin-left: 35px;color: rgb(1,1,1);"><input class="form-check-input" type="radio" id="formCheck-12"><label class="form-check-label" for="formCheck-12">option 4</label></div>
+                    </div>
+                </div>
+            </div> -->
+            </form>
+        </div>
+    </div>
+    <script src="{% static 'MCQsForm/bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

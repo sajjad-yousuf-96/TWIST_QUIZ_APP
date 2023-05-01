@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" style="width: 1366px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>QUIZAPPconstraints</title>
+    <link rel="stylesheet" href="{% static 'QuizConstraints/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700">
+    <link rel="stylesheet" href="{% static 'QuizConstraints/css/Button-Change-Text-on-Hover.css' %}">
+    <link rel="stylesheet" href="{% static 'QuizConstraints/css/Navigation-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'QuizConstraints/css/Neon-Button.css' %}">
+    <link rel="stylesheet" href="{% static 'QuizConstraints/css/styles.css' %}">
+</head>
+
+<style>
+    .btn-outline-success{
+        color: #fffefe;
+        background-color: transparent !important;
+        border-color: #fffefe;
+    }
+    .btn-outline-success:hover{
+        color: #fffefe;
+        background-color: #00589E !important;
+        border-color: #fffefe;
+    }
+</style>
+
+<body style="border-color: rgb(21,35,45);height: 550px;margin-right: 0px;width: 1366px;margin-bottom: 0;">
+   
+    <div class="mynav" style="display: flex;align-items: center;width: 1366px;height: 63px;background: #005ad5;">
+        <div></div>
+        <div style="margin: 0px;padding: 0px;padding-left: 0px;border-style: none;width: 487.3px;height: 58px;"><img style="width: 160px;height: 57px;" src="{% static '/images/twistquiz-01.png' %}"></div>
+        <div style="width: 300px;height: 58px;margin-left: 581px;border-style: none;border-color: rgb(202,221,241);"><a class="btn btn-outline-success" href="{% url 'teacherlogout' %}" type="button" style="background: transparent;font-size: 20px;margin-left: 196px;border-style: solid;border-color: rgb(255,252,252);border-radius: 17px;margin-top: 7px;">Logout</a></div>
+    </div>
+    
+    <div style="height: 562px;width: 1366px;background: #e0e0ed;padding-top: 2px;border-style: none;border-color: var(--bs-indigo);">
+        <div style="color: var(--bs-indigo);width: 691px;border-radius: 49px;padding-bottom: 0px;padding-left: 0px;margin-left: 330px;margin-top: 39px;border-style: none;border-color: var(--bs-indigo);background: transparent;opacity: 0.90;height: 482px;">
+            <div style="border-style: none;height: 116px;"><label class="form-label" style="height: 50px;width: 600px;margin-left: 76px;color: rgb(26,26,27);font-size: 36px;font-weight: bold;margin-top: 20px;">Enter Quiz Code to See Result &nbsp;</label></div>
+            <form method="POST" action="{% url 'ViewResult' %}">
+                {% csrf_token %}
+                <div style="height: 80px;margin-left: 0px;border-radius: 19px;border-style: none;"><label class="form-label" style="font-size: 30px;margin-top: 14px;margin-left: 128px;color: rgb(18,18,18);font-family: Overpass;">Quiz Code</label><input name="quizcode" type="text" style="margin-left: 24px;height: 28px;width: 171.188px;" required></div>
+                <div style="height: 80px;border-style: none;"><input type="submit" style="background: #035995;font-size: 22px;margin-left: 309px;border-style: solid;border-color: rgb(255,252,252);border-radius: 3px;margin-top: 20px;" value="Next"></div>
+            </form>
+        </div>
+    </div>
+   
+    <script src="{% static 'QuizConstraints/bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

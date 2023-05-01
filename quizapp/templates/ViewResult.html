@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" style="width: 1366px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>QUIZAPPSubmitingQuizFeedbaack (copy)</title>
+    <link rel="stylesheet" href="{% static 'ViewResult/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700">
+    <link rel="stylesheet" href="{% static 'ViewResult/css/Button-Change-Text-on-Hover.css' %}">
+    <link rel="stylesheet" href="{% static 'ViewResult/css/Navigation-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'ViewResult/css/Neon-Button.css' %}">
+    <link rel="stylesheet" href="{% static 'ViewResult/css/styles.css' %}">
+</head>
+
+<style>
+    .btn-outline-success{
+        color: #fffefe;
+        background-color: transparent !important;
+        border-color: #fffefe;
+    }
+    .btn-outline-success:hover{
+        color: #fffefe;
+        background-color: #00589E !important;
+        border-color: #fffefe;
+    }
+</style>
+
+<body style="border-color: rgb(21,35,45);height: 550px;margin-right: 0px;width: 1366px;margin-bottom: 0;">
+    <div class="mynav" style="display: flex;align-items: center;width: 1366px;height: 75px;background: #005ad5;">
+        <div></div>
+        <div style="margin: 0px;padding: 0px;padding-left: 0px;width: 500.3px;height: 63px;border-style: none;"><img src="{% static '/images/twistquiz-01.png' %}" style="width: 153px;height: 60px;"></div>
+        <div style="width: 300px;height: 58px;margin-left: 540px;border-style: none;border-color: rgb(202,221,241);"><a class="btn btn-outline-success" type="button" href=" {% url 'teacherlogout' %}" style="background: #005ad5;font-size: 20px;margin-left: 185px;border-style: solid;border-color: rgb(255,252,252);border-radius: 17px;margin-top: 7px;">LOGOUT</a></div>
+    </div>
+    <div style="height: 505px;width: 1001px;background: #f8f8fb;padding-top: 2px;border-style: none;border-color: var(--bs-indigo);">
+        <div style="color: var(--bs-indigo);height: 482px;width: 1001px;border-radius: 33px;padding-bottom: 0px;padding-left: 0px;margin-left: 117px;margin-top: 39px;background: transparent;opacity: 0.78;overflow-y: scroll;border-style: none;border-color: var(--bs-indigo);">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Roll Number</th>
+                            <th>Marks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cell 1</td>
+                            <td>Cell 2</td>
+                        </tr>
+                        <tr>
+                            <td>Cell 3</td>
+                            <td>Cell 4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'ViewResult/bootstrap/css/bootstrap.min.css' %}"></script>></script>
+</body>
+
+</html>
